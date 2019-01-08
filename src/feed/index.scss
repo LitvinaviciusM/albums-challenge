@@ -1,0 +1,21 @@
+.feed {
+  $size: 8px;
+  flex-grow: 3;
+
+  .album {
+    align-items: center;
+    border: 1px solid #000;
+    display: flex;
+    margin-bottom: $size * 2;
+    max-width: 60%;
+    padding: $size $size * 2 $size $size;
+
+    &__img {
+      margin-right: $size * 2;
+    }
+
+    &__price {
+      margin-left: auto;
+    }
+  }
+}
