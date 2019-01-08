@@ -15,7 +15,7 @@ const initialState = {
 
 export const filter = (state = initialState, action) => {
   switch (action.type) {
-    case 'INIT_PRICE_FILTER':
+    case 'SET_PRICE_FILTER':
       return {
         ...state,
         selections: {
@@ -23,7 +23,7 @@ export const filter = (state = initialState, action) => {
           price: action.payload,
         }
       };
-    case 'INIT_YEAR_FILTER':
+    case 'SET_YEAR_FILTER':
       return {
         ...state,
         selections: {

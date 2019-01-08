@@ -17,16 +17,18 @@ export const setFilteredFeed = () => (dispatch, getState) => {
   dispatch({ type: 'SET_FILTERED_FEED', payload: { hash, filtered } });
 };
 
-export const initFilters = () => (dispatch, getState) => {
-  const { feed } = getState();
-  const year = getSelectionsByYear(feed);
-  const price = getSelectionsByPrice(feed);
+export const setFilters = () => (dispatch, getState) => {
+  const { filter: { feed, currentHash } } = getState();
+  const filtered = feed[currentHash];
+  const year = getSelectionsByYear(filtered);
+  const price = getSelectionsByPrice(filtered);
 
-  dispatch({ type: 'INIT_YEAR_FILTER', payload: year });
-  dispatch({ type: 'INIT_PRICE_FILTER', payload: price });
+  dispatch({ type: 'SET_YEAR_FILTER', payload: year });
+  dispatch({ type: 'SET_PRICE_FILTER', payload: price });
 };
 
 export const onFilterChange = (value, variant) => async dispatch => {
   await dispatch({ type: 'TOGGLE_FILTER_SELECTION', payload: { variant, value }});
   dispatch(setFilteredFeed());
+  dispatch(setFilters());
 };
