@@ -2,6 +2,7 @@
   $size: 8px;
   flex-grow: 1;
   margin-right: $size * 4;
+  min-width: 200px;
 
   .box {
     border: 1px solid #000;
@@ -17,7 +18,12 @@
       margin-bottom: $size;
 
       input {
+        cursor: pointer;
         margin-right: $size;
+      }
+
+      label {
+        cursor: pointer;
       }
     }
   }

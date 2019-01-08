@@ -1,13 +1,13 @@
 .feed {
   $size: 8px;
   flex-grow: 3;
+  min-width: 600px;
 
   .album {
     align-items: center;
     border: 1px solid #000;
     display: flex;
     margin-bottom: $size * 2;
-    max-width: 60%;
     padding: $size $size * 2 $size $size;
 
     &__img {
